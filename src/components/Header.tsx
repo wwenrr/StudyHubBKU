@@ -55,7 +55,9 @@ const Header = () => {
           </nav>
 
           {/* Mobile nav (dropdown) */}
-          <div className="sm:hidden">
+          <div className="sm:hidden flex items-center space-x-2">
+            <OnlineMode />
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
