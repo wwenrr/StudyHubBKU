@@ -35,6 +35,18 @@ export default defineConfig(({ mode }) => ({
           },
         ],
       },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /.*\.(png|jpg|jpeg|svg)/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "image-cache",
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 30 }, // 30 ngày
+            },
+          },
+        ],
+      },
     }),
   ].filter(Boolean),
   resolve: {

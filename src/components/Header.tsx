@@ -7,6 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { OnlineMode } from "./nav/OnlineMode";
 
 const navItems = [
   { path: "/schedule", label: "Thời khóa biểu", short: "TKB", icon: Calendar },
@@ -32,7 +33,7 @@ const Header = () => {
 
           {/* Navigation */}
           {/* Desktop nav */}
-          <nav className="hidden sm:flex items-center space-x-1 sm:space-x-4">
+          <nav className="hidden sm:flex flex-wrap items-center space-x-1 sm:space-x-4">
             {navItems.map(({ path, label, icon: Icon }) => {
               const active = location.pathname === path;
               return (
@@ -49,6 +50,8 @@ const Header = () => {
                 </Button>
               );
             })}
+
+            <OnlineMode />
           </nav>
 
           {/* Mobile nav (dropdown) */}
